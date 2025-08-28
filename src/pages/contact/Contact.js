@@ -17,6 +17,13 @@ export const ContactUs = () => {
     variant: "",
   });
 
+  const handleChange = (e) => {
+    setFormdata({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormdata({ loading: true });
@@ -57,13 +64,6 @@ export const ContactUs = () => {
       );
   };
 
-  const handleChange = (e) => {
-    setFormdata({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <HelmetProvider>
       <Container>
@@ -101,13 +101,13 @@ export const ContactUs = () => {
               </a>
               <br />
               <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
+              {/* {contactConfig.hasOwnProperty("YOUR_FONE") ? (
                 <p>
                   <strong>Phone:</strong> {contactConfig.YOUR_FONE}
                 </p>
               ) : (
                 ""
-              )}
+              )} */}
             </address>
             <p>{contactConfig.description}</p>
           </Col>
